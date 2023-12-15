@@ -2,12 +2,17 @@ package com.example.introducemyself
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.result.contract.ActivityResultContracts
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 
 class SignInActivity : AppCompatActivity() {
+    //registerForActivityResult 사용하기 위한 1번째
+    lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,12 +39,22 @@ class SignInActivity : AppCompatActivity() {
             }
 
         }
+        // registerForActivity 를 활용하여 회원가입 페이지에서 작성한 아이디 비번 내용을 그대로 받으려고 했으나 안됨
+        activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){it ->
+            if(it.resultCode == RESULT_OK) {
+                val idreturn = intent.getStringExtra("id") ?:""
+                val passreturn =intent.getStringExtra("pass") ?:""
+                    idtext.setText(idreturn)
+                    passtext.setText(passreturn)
+            }
+        }
 
         // 회원가입 버튼 눌렀을 때, SignUpActivity 창 실행
         val btn_signup = findViewById<Button>(R.id.signup)
         btn_signup.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
+//            startActivity(intent)
+            activityResultLauncher.launch(intent)
             Toast.makeText(this,"회원가입 창으로 이동합니다.",Toast.LENGTH_SHORT).show()
         }
     }
