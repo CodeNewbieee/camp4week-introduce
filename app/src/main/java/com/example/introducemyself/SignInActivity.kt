@@ -40,6 +40,9 @@ class SignInActivity : AppCompatActivity() {
 
         }
         // registerForActivity 를 활용하여 회원가입 페이지에서 작성한 아이디 비번 내용을 그대로 받으려고 했으나 안됨
+        // 아래 주석처리된것 처럼 회원가입 창에서 인텐트로 보내준 데이터 값을 받을 때 동일하게 intent로 하였으나
+        // 전혀 기능이 실행되지 않았고, it의 data로 받게끔 할때 자동입력이 되었음
+        //
         activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){it ->
             if(it.resultCode == RESULT_OK) {
 //                val idreturn = intent.getStringExtra("id") ?:""
