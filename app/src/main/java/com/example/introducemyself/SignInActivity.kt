@@ -29,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 // 아이디 입력창에서 작성한 정보
-                // HomeActivity로 넘어갈시 입력한 아이디 정보가 putExtra 함수에 의해 넘겨짐ㅁㄴ
+                // HomeActivity로 넘어갈시 입력한 아이디 정보가 putExtra 함수에 의해 넘겨짐
                 val strData = idtext.text.toString()
                 val intent = Intent(this, HomeActivity::class.java)
                 intent.putExtra("dataFromSignInActivity", strData)
@@ -42,8 +42,10 @@ class SignInActivity : AppCompatActivity() {
         // registerForActivity 를 활용하여 회원가입 페이지에서 작성한 아이디 비번 내용을 그대로 받으려고 했으나 안됨
         activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){it ->
             if(it.resultCode == RESULT_OK) {
-                val idreturn = intent.getStringExtra("id") ?:""
-                val passreturn =intent.getStringExtra("pass") ?:""
+//                val idreturn = intent.getStringExtra("id") ?:""
+//                val passreturn = intent.getStringExtra("pass") ?:""
+                val idreturn = it.data?.getStringExtra("id")
+                val passreturn = it.data?.getStringExtra("pass")
                     idtext.setText(idreturn)
                     passtext.setText(passreturn)
             }
