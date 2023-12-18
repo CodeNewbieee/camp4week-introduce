@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import kotlin.random.Random
 
 class HomeActivity : AppCompatActivity() {
@@ -30,7 +31,8 @@ class HomeActivity : AppCompatActivity() {
 
         //메인화면의 아이디 창에서 입력한 정보를 받을 수 있도록 변수 지정
         val strData =intent.getStringExtra("dataFromSignInActivity")
-        val editText = findViewById<EditText>(R.id.edittext)
+        val editText = findViewById<TextView>(R.id.edittext)
+//        editText.text=strData, 아래 코드와 동일
         editText.setText(strData)
 
         //종료 버튼 클릭시 SignInActivity로 이동

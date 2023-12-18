@@ -28,10 +28,10 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             } else {
-                // 아이디 입력창에서 작성한 정보
-                // HomeActivity로 넘어갈시 입력한 아이디 정보가 putExtra 함수에 의해 넘겨짐
+                // 아이디 입력창에서 작성한 정보를 버튼을 클릭했을 때, strData 변수에 할당(저장,담음)
                 val strData = idtext.text.toString()
                 val intent = Intent(this, HomeActivity::class.java)
+                // HomeActivity로 넘어갈시 입력한 아이디 정보가 putExtra 함수에 의해 넘겨짐
                 intent.putExtra("dataFromSignInActivity", strData)
                 startActivity(intent)
                 // 로그인 되었을 때 로그인 성공 메세지 출력
@@ -42,7 +42,8 @@ class SignInActivity : AppCompatActivity() {
         // registerForActivity 를 활용하여 회원가입 페이지에서 작성한 아이디 비번 내용을 그대로 받으려고 했으나 안됨
         // 아래 주석처리된것 처럼 회원가입 창에서 인텐트로 보내준 데이터 값을 받을 때 동일하게 intent로 하였으나
         // 전혀 기능이 실행되지 않았고, it의 data로 받게끔 할때 자동입력이 되었음
-        //
+        // resultcode 인텐트가 실행된 곳에서 돌려받은 결과 코드
+        // data는 결과 데이터가 들어있는 인탠트 객체
         activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){it ->
             if(it.resultCode == RESULT_OK) {
 //                val idreturn = intent.getStringExtra("id") ?:""
@@ -57,8 +58,10 @@ class SignInActivity : AppCompatActivity() {
         // 회원가입 버튼 눌렀을 때, SignUpActivity 창 실행
         val btn_signup = findViewById<Button>(R.id.signup)
         btn_signup.setOnClickListener {
+            //this는 현재 액티비티를 지칭, 뒤에는 넘어가고자 하는 액티비티를 작성
             val intent = Intent(this, SignUpActivity::class.java)
-//            startActivity(intent)
+            //registerForActivity를 사용할 경우 화면전환후 다시 돌아와서 데이터를 받는 과정이기때문에
+            //startActivity(intent)를 쓰지 않고, 아래의 코드를 사용하여 화면 전환
             activityResultLauncher.launch(intent)
             Toast.makeText(this,"회원가입 창으로 이동합니다.",Toast.LENGTH_SHORT).show()
         }
