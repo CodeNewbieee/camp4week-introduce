@@ -10,14 +10,14 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="168dp"
+        android:layout_height="110dp"
         android:src="@drawable/signup"
         android:layout_marginTop="25dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:text="이름"
         android:textColor="#FFF176"
         android:textStyle="bold"
@@ -37,11 +37,31 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="25sp"
+        android:text="나이"
+        android:textColor="#FFF176"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/sign_agetext"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="나이를 입력하세요"
+        android:textColorHint="#A6272020"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:text="아이디"
         android:textColor="#FFF176"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"/>
 
     <EditText
@@ -57,11 +77,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:text="비밀번호"
         android:textColor="#FFF176"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"/>
 
     <EditText

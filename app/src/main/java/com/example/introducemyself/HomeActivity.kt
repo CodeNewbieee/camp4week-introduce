@@ -13,13 +13,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val imageArray = listOf(R.drawable.linefreinds1,R.drawable.linefreinds2,R.drawable.linefreinds3,R.drawable.linefreinds4,R.drawable.linefreinds5)
-        // 랜덤하게 이미지 구현할 수 있도록 image 변수에 이미지 뷰 담기
-        // 랜덤기능 사용하기 위해 랜덤객체 생성
-        // 랜덤객체의 숫자가 랜덤하게 나오도로고 하고, num 변수에 그 값이 할당되도록 함
         val image = findViewById<ImageView>(R.id.imageView2)
-        var ram = Random
-        var num = ram.nextInt(imageArray.size)
-        image.setImageResource(imageArray[num])
+//        var ram = Random
+//        var num = ram.nextInt(imageArray.size)
+//        위 코드처럼 random 객체 생성해서 랜덤의 함수 사용해도 되지만, 콜렉션 함수를 통해서 아래처럼 바로 랜덤 가능
+        image.setImageResource(imageArray.random())
+
+        // (아래) 제일 처음에 작성한 랜덤 이미지 코드
         // when 구문을 통해서 num에 랜덤하게 숫자가 할당될 때, 그 숫자에 맞춰 지정한 이미지가 출력되도록 함
 //        when(num) {
 //            0 -> image.setImageResource(R.drawable.linefreinds1)
