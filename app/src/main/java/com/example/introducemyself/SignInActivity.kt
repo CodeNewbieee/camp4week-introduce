@@ -24,9 +24,12 @@ class SignInActivity : AppCompatActivity() {
         // 로그인 버튼 눌렀을 때, HomeActivity 창이 실행
         // 아이디 및 비빌번호 창(edittext)에 빈칸 상태로 로그인 버튼을 눌렀을때, 입력확인 메세지 출력
         btn_home.setOnClickListener {
-            if (idtext.text.isEmpty() || passtext.text.isEmpty()) {
-                Toast.makeText(this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            if (idtext.text.trim().isEmpty() || passtext.text.trim().isEmpty()) {
+                Toast.makeText(this, getString(R.string.id_passerr), Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+                //else 문을 쓰게 되면 위의 return이 필요없다.
+                // 위의 return의 의미는 현재 클릭리스너 구문을 아래 남은 코드를 무시하고 빠져나가겠다는 의미 그래서 실행 안되게 막는것
+                // else로 연결되어 있다면 없어도 무방
             } else {
                 // 아이디 입력창에서 작성한 정보를 버튼을 클릭했을 때, strData 변수에 할당(저장,담음)
                 val strData = idtext.text.toString()
@@ -35,7 +38,7 @@ class SignInActivity : AppCompatActivity() {
                 intent.putExtra("dataFromSignInActivity", strData)
                 startActivity(intent)
                 // 로그인 되었을 때 로그인 성공 메세지 출력
-                Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.signin), Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -62,7 +65,7 @@ class SignInActivity : AppCompatActivity() {
             //registerForActivity를 사용할 경우 화면전환후 다시 돌아와서 데이터를 받는 과정이기때문에
             //startActivity(intent)를 쓰지 않고, 아래의 코드를 사용하여 화면 이동
             activityResultLauncher.launch(intent)
-            Toast.makeText(this,"회원가입 창으로 이동합니다.",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,getString(R.string.signup),Toast.LENGTH_SHORT).show()
         }
     }
 }

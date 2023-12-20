@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">IntroduceMySelf</string>
+    <string name="iderr">아이디를 입력해주세요</string>
+    <string name="passerr">비밀번호를 입력해주세요</string>
+    <string name="ageerr">나이를 입력해주세요</string>
+    <string name="nameerr">이름을 입력해주세요</string>
+    <string name="id_passerr">아이디/비밀번호를 입력해주세요</string>
+    <string name="signin">로그인 하였습니다</string>
+    <string name="signup">회원가입창으로 이동합니다</string>
+    <string name="signup_sc">회원가입이 완료되었습니다</string>
+
+
 </resources>

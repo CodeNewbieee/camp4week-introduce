@@ -21,9 +21,16 @@ class SignUpActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.btn_signup)
 
         btn.setOnClickListener { // 이름, 나이, 아이디, 비번 중 하나라도 입력되지 않을시, 토스트 메세지 출력
-            if (nametext.text.isEmpty() || agetext.text.isEmpty() || idtext.text.isEmpty() || passtext.text.isEmpty()) {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener // 빈칸이 있을 경우 토스트 메세지 출력
+            // getString 활용하여 토스트 메세지 출력
+            // 각 빈칸에 대한 메세지 출력
+            if (nametext.text.trim().isEmpty()) {
+                Toast.makeText(this, getString(R.string.nameerr), Toast.LENGTH_SHORT).show()
+            } else if(agetext.text.trim().isEmpty()){
+                Toast.makeText(this, getString(R.string.ageerr), Toast.LENGTH_SHORT).show()
+            } else if(idtext.text.trim().isEmpty()){
+                Toast.makeText(this, getString(R.string.iderr), Toast.LENGTH_SHORT).show()
+            } else if(passtext.text.trim().isEmpty()) {
+                Toast.makeText(this, getString(R.string.passerr), Toast.LENGTH_SHORT).show()
             } else {
                 // 입력된 아이디와 비밀번호 데이터를 메인 화면에 자동입력되도록 데이터 전달(콜백?)
                 val intent = Intent(this, SignInActivity::class.java).apply {
@@ -31,7 +38,7 @@ class SignUpActivity : AppCompatActivity() {
                     putExtra("pass", passtext.text.toString())
                 }
                 setResult(RESULT_OK,intent)
-                Toast.makeText(this,"회원가입이 완료되었습니다.",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.signup_sc),Toast.LENGTH_SHORT).show()
                 finish()
             }
             // 회원가입 버튼 클릭시 메인인 signinActivity로 이동
