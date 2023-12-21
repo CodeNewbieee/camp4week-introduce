@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintLayoutStates
+import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import kotlin.random.Random
 
 class HomeActivity : AppCompatActivity() {
@@ -30,13 +33,13 @@ class HomeActivity : AppCompatActivity() {
 //        }
 
         //메인화면의 아이디 창에서 입력한 정보를 받을 수 있도록 변수 지정
-        val strData =intent.getStringExtra("dataFromSignInActivity")
-        val editText = findViewById<TextView>(R.id.edittext)
+        val strData =intent.getStringExtra(getString(R.string.signin_info))
+        val editText = findViewById<TextView>(R.id.textView)
 //        editText.text=strData, 아래 코드와 동일
-        editText.setText(strData)
+        editText.setText("아이디 : ${strData}")
 
         //종료 버튼 클릭시 SignInActivity로 이동
-        val btn_close = findViewById<Button>(R.id.btn_close)
+        val btn_close = findViewById<ConstraintLayout>(R.id.btn_c)
         btn_close.setOnClickListener {
             finish()
         }

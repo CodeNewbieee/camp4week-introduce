@@ -8,6 +8,7 @@
     <string name="signin">로그인 하였습니다</string>
     <string name="signup">회원가입창으로 이동합니다</string>
     <string name="signup_sc">회원가입이 완료되었습니다</string>
+    <string name="signin_info">dataFromSignInActivity</string>
 
 
 </resources>

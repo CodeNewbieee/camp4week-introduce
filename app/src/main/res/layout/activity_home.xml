@@ -14,18 +14,19 @@
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="180dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="아이디:"
+        android:layout_marginLeft="50dp"
+        android:text=""
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,18 +34,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/edittext"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#BA3B13"
-        android:layout_marginStart="192dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -83,18 +72,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <Button
-        android:id="@+id/btn_close"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="종료"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:background="@drawable/button_bg"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_c"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/selector_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
+        <ImageView
+            android:id="@+id/lv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/selector_image"
+            app:flow_horizontalBias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_home"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lv_home"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

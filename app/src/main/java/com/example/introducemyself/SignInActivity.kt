@@ -35,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
                 val strData = idtext.text.toString()
                 val intent = Intent(this, HomeActivity::class.java)
                 // HomeActivity로 이동할 시 입력한 아이디 정보가 putExtra 함수에 의해 넘겨짐
-                intent.putExtra("dataFromSignInActivity", strData)
+                intent.putExtra(getString(R.string.signin_info), strData)
                 startActivity(intent)
                 // 로그인 되었을 때 로그인 성공 메세지 출력
                 Toast.makeText(this, getString(R.string.signin), Toast.LENGTH_SHORT).show()
