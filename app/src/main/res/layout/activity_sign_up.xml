@@ -10,100 +10,137 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="110dp"
-        android:src="@drawable/signup"
-        android:layout_marginTop="25dp"/>
+        android:layout_height="90dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/signup" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:text="이름"
         android:textColor="#FFF176"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/sign_nametext"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="이름을 입력하세요"
-        android:textColorHint="#A6272020"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:inputType="text|textAutoComplete"/>
+        android:layout_marginTop="10dp"
+        android:hint="이름을 입력하세요"
+        android:inputType="text|textAutoComplete"
+        android:textColorHint="#A6272020" />
+
+    <TextView
+        android:id="@+id/tv_blank1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:text="빈칸이 있습니다. 입력해주세요"
+        android:textColor="@color/red"
+        android:textSize="11sp"
+        android:visibility="visible"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:text="나이"
         android:textColor="#FFF176"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/sign_agetext"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="나이를 입력하세요"
-        android:textColorHint="#A6272020"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:inputType="number"/>
+        android:layout_marginTop="10dp"
+        android:hint="나이를 입력하세요"
+        android:inputType="number"
+        android:textColorHint="#A6272020" />
+
+    <TextView
+        android:id="@+id/tv_blank2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:text="빈칸이 있습니다. 입력해주세요"
+        android:textColor="@color/red"
+        android:textSize="11sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:text="아이디"
         android:textColor="#FFF176"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/sign_idtext"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="아이디를 입력하세요"
-        android:textColorHint="#A6272020"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:inputType="textAutoComplete|text"/>
+        android:layout_marginTop="10dp"
+        android:hint="아이디를 입력하세요"
+        android:inputType="textAutoComplete|text"
+        android:textColorHint="#A6272020" />
+
+    <TextView
+        android:id="@+id/tv_blank3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:text="빈칸이 있습니다. 입력해주세요"
+        android:textColor="@color/red"
+        android:textSize="11sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:text="비밀번호"
         android:textColor="#FFF176"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/sign_passtext"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="비밀번호를 입력하세요"
-        android:textColorHint="#A6272020"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:inputType="textPassword"/>
+        android:layout_marginTop="10dp"
+        android:hint="비밀번호를 입력하세요"
+        android:inputType="textPassword"
+        android:textColorHint="#A6272020" />
+
+    <TextView
+        android:id="@+id/tv_blank4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:text="빈칸이 있습니다. 입력해주세요"
+        android:textColor="@color/red"
+        android:textSize="11sp"/>
 
     <Button
         android:id="@+id/btn_signup"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_bg"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_bg"
         android:text="회원가입"
         android:textColor="@color/white"
-        android:textSize="22dp"/>
+        android:textSize="22dp" />
 
 
 </LinearLayout>
